@@ -28,6 +28,8 @@ public class RunnableVsThreadLiveTest {
 	public void givenARunnable_whenRunIt_thenResult() throws Exception{
 		Thread thread = new Thread(new SimpleRunnable(
 		  "SimpleRunnable executed using Thread"));
+		System.out.println("testing");
+		Thread.sleep(2000);
 		thread.start();
 		thread.join();
 	}
