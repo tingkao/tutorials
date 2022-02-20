@@ -10,7 +10,7 @@ public class FactorialTask implements Callable<Integer> {
         this.number = number;
     }
 
-    public Integer call() throws InvalidParamaterException {
+    public Integer call() throws InvalidParamaterException, InterruptedException {
         int fact=1;
         if(number < 0)
             throw new InvalidParamaterException("Number must be positive");
@@ -18,7 +18,7 @@ public class FactorialTask implements Callable<Integer> {
         for(int count=number;count>1;count--){
             fact=fact * count;
         }
-
+        Thread.sleep(4000);
         return fact;
     }
 
